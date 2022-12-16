@@ -10,7 +10,7 @@ const SearchBar = () => {
     dispatch(searchActions.toggleShow());
   };
   const searchTabHandler = () => {
-    dispatch(searchActions.toggleHide());
+    // dispatch(searchActions.toggleHide());
   };
   return (
     <div>
