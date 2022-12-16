@@ -7,6 +7,8 @@ import {
   fetchProductData,
   fetchProductCategories,
 } from "./store/product-actions";
+import { Switch, Route, Redirect } from "react-router-dom";
+import ProductsPage from "./pages/ProductsPage";
 function App() {
   const dispatch = useDispatch();
   const showSearchTab = useSelector((state) => state.search.searchIsAvailable);
@@ -18,12 +20,20 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
-      <div className="App">
-        <SearchBar />
-      </div>
-      {showSearchTab && <SearchTab products={data} categories={categories} />}
-    </>
+    <Switch>
+      <Route path="/" exact>
+        <Redirect to="/home" />
+      </Route>
+      <Route path="/home">
+        <div className="App">
+          <SearchBar />
+        </div>
+        {showSearchTab && <SearchTab products={data} categories={categories} />}
+      </Route>
+      <Route path="/products">
+        <ProductsPage />
+      </Route>
+    </Switch>
   );
 }
 

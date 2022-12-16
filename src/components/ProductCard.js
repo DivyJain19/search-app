@@ -7,7 +7,7 @@ import classes from "./ProductCard.module.css";
 const ProductCard = (props) => {
   return (
     <div style={{ textAlign: "center" }}>
-      <img className={classes.img} src={props.img} />
+      <img className={classes.img} src={props.img} alt={props.name} />
       <p className={classes.name}>{props.name}</p>
     </div>
   );

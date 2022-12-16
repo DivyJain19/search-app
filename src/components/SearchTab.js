@@ -2,7 +2,7 @@ import React from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import ProductCard from "./ProductCard";
-
+import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 const SearchTab = (props) => {
   console.log(props.products);
@@ -28,10 +28,15 @@ const SearchTab = (props) => {
             </Grid>
             {Array.from(Array(5)).map((_, index) => (
               <Grid item xs={6} md={3} lg={2.4} key={index}>
-                <ProductCard
-                  name={props.products[index + 1].title}
-                  img={props.products[index + 1].image}
-                />
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/products"
+                >
+                  <ProductCard
+                    name={props.products[index + 1].title}
+                    img={props.products[index + 1].image}
+                  />
+                </Link>
               </Grid>
             ))}
           </Grid>
@@ -47,7 +52,12 @@ const SearchTab = (props) => {
             </Grid>
             {props.categories.map((_, index) => (
               <Grid item xs={12} key={index}>
-                <p>{props.categories[index]}</p>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/products"
+                >
+                  <p>{props.categories[index]}</p>
+                </Link>
               </Grid>
             ))}
           </Grid>
