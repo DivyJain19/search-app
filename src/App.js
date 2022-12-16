@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import SearchBar from "./components/SearchBar";
+import SearchTab from "./components/SearchTab";
+import { useSelector } from "react-redux";
 function App() {
+  const showSearchTab = useSelector((state) => state.search.searchIsAvailable);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar />
+      {showSearchTab && <SearchTab />}
+      {/* <SearchTab /> */}
     </div>
   );
 }
