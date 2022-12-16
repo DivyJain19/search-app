@@ -17,8 +17,8 @@ const SearchBar = () => {
       <OutlinedInput
         onClick={searchInputHandler}
         onBlur={searchTabHandler}
-        className="search"
-        sx={{ m: 1, mt: 3, width: "70ch" }}
+        style={{ borderRadius: "1rem", backgroundColor: "white" }}
+        sx={{ m: 1, mt: 3, width: "85ch", height: "8ch" }}
         id="outlined-adornment-weight"
         endAdornment={
           <InputAdornment position="end">

@@ -38,6 +38,7 @@
 }
 .search {
   background-color: white;
+  border-radius: 2rem;
 }
 
 .searchTab {

@@ -5,7 +5,10 @@ import Container from "@mui/material/Container";
 const SearchTab = () => {
   return (
     <Container maxWidth="md">
-      <Box className="searchTab" sx={{ bgcolor: "#fff", height: "70vh" }} />
+      <Box
+        className="searchTab"
+        sx={{ bgcolor: "#fff", height: "60vh", minWidth: "46rem" }}
+      />
     </Container>
   );
 };
