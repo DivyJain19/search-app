@@ -28,7 +28,7 @@ function App() {
         <>
           <div className="App">
             <SearchBar />
-            {showSearchTab && (
+            {showSearchTab && data.length > 0 && (
               <SearchTab products={data} categories={categories} />
             )}
           </div>

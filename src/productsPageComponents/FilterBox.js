@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./FilterBox.module.css";
 import { BiChevronDown } from "react-icons/bi";
 import Rating from "@mui/material/Rating";
-// console.log(categories);
+
 const FilterBox = (props) => {
+  //   console.log(props.categories);
+  const [selectedCategoryFilter, setSelectedCategoryFilter] = useState([]);
+  function categoryCheckboxHandler(e) {
+    // console.log(e);
+    if (e.target.checked) {
+      setSelectedCategoryFilter((state) => [...state, e.target.value]);
+    } else {
+      setSelectedCategoryFilter((state) => {
+        // console.log(state.splice(state.indexOf(e.target.value)));
+        let temp = state.filter((item) => item !== e.target.value);
+        // console.log(temp);
+        return temp;
+      });
+    }
+    // console.log(selectedCategoryFilter);
+  }
+
+  useEffect(() => {
+    props.onSelectCategoryFilter(selectedCategoryFilter);
+  }, [selectedCategoryFilter]);
+
   return (
     <div className={classes.filterBox}>
       <h1>Search Results</h1>
@@ -21,6 +42,7 @@ const FilterBox = (props) => {
                   className={classes.checkbox}
                   type="checkbox"
                   value={item}
+                  onClick={categoryCheckboxHandler}
                 />
                 <p className={classes.label}>{item}</p>
               </div>
@@ -35,15 +57,15 @@ const FilterBox = (props) => {
         </summary>
         <div className={classes.inputDiv}>
           <div className={classes.checkBoxDiv}>
-            <input
-              className={classes.checkbox}
-              type="checkbox"
-              value="Under 500"
-            />
+            <input className={classes.checkbox} type="checkbox" value="500" />
             <p className={classes.label}>Under 500</p>
           </div>
           <div className={classes.checkBoxDiv}>
-            <input className={classes.checkbox} type="checkbox" value="" />
+            <input
+              className={classes.checkbox}
+              type="checkbox"
+              value="1000t3000"
+            />
             <p className={classes.label}>1000 To 3000</p>
           </div>
         </div>
