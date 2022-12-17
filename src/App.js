@@ -25,13 +25,19 @@ function App() {
         <Redirect to="/home" />
       </Route>
       <Route path="/home">
-        <div className="App">
-          <SearchBar />
-        </div>
-        {showSearchTab && <SearchTab products={data} categories={categories} />}
+        <>
+          <div className="App">
+            <SearchBar />
+            {showSearchTab && (
+              <SearchTab products={data} categories={categories} />
+            )}
+          </div>
+        </>
       </Route>
       <Route path="/products">
-        <ProductsPage />
+        <ProductsPage
+          style={{ marginTop: "3rem", width: "100%", height: "100vh" }}
+        />
       </Route>
     </Switch>
   );

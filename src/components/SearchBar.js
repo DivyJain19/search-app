@@ -13,12 +13,15 @@ const SearchBar = () => {
     // dispatch(searchActions.toggleHide());
   };
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <OutlinedInput
         onClick={searchInputHandler}
         onBlur={searchTabHandler}
-        style={{ borderRadius: "1rem", backgroundColor: "white" }}
-        sx={{ m: 1, mt: 3, width: "85ch", height: "8ch" }}
+        style={{
+          borderRadius: "1rem",
+          backgroundColor: "white",
+        }}
+        sx={{ m: 1, mt: 3, minWidth: "85ch", height: "8ch" }}
         id="outlined-adornment-weight"
         endAdornment={
           <InputAdornment position="end">

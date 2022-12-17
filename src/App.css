@@ -1,6 +1,13 @@
 .App {
-  text-align: center;
-  margin-top: 7rem;
+  /* text-align: center; */
+  /* margin-top: 7rem; */
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fGNsb3RoZXMlMjBzaG9wfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 7rem;
 }
 
 .search {
@@ -11,3 +18,10 @@
 .searchTab {
   border-radius: 0.4rem;
 }
+.productPage {
+  text-align: center;
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+}
+/* //// */
